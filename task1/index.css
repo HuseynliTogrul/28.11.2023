@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+body {
+  color: #F3F4F6;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background: #1F2937;
+}
+
+.header {
+  margin-top: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 32px;
+}
+.header .burger-menu {
+  position: relative;
+  display: none;
+  transition: all 0.3s;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: #374151;
+}
+.header .burger-menu .item {
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+  background: #9CA3AF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header .burger-menu .item:nth-child(1) {
+  transform: translateY(calc(-50% - 5px)) translateX(-50%);
+}
+.header .burger-menu .item:nth-child(2) {
+  transform: translateY(calc(-50% + 5px)) translateX(-50%);
+}
+.header .burger-menu:hover .item {
+  background-color: white;
+}
+.header .burger-menu:hover .item:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+}
+.header .burger-menu:hover .item:nth-child(2) {
+  transform: translateX(-50%) rotate(135deg);
+}
+.header .burger-menu:hover .item:nth-child(3) {
+  display: none;
+}
+.header .header-left {
+  display: flex;
+  gap: 2rem;
+}
+.header .header-left h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.header .header-left nav {
+  display: flex;
+  align-items: center;
+  display: block;
+}
+.header .header-left nav ul {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.header .header-left nav ul li {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.header .header-left nav ul .active {
+  background: #111827;
+}
+.header .header-left nav ul :hover {
+  background: #374151;
+}
+
+@media screen and (max-width: 428px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .container .burger-menu {
+    display: block;
+  }
+  .container .header-left {
+    gap: 0;
+  }
+  .container .header-left li {
+    display: none;
+  }
+}/*# sourceMappingURL=index.css.map */

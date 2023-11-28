@@ -1,0 +1,126 @@
+@import "reset";
+
+body{
+    color: #F3F4F6;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #1F2937;
+}
+
+.header{
+    margin-top: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 32px;
+
+    .burger-menu{
+        position: relative;
+        display: none;
+        transition: all 0.3s;
+        width: 44px;
+        height: 44px;
+        border-radius: 6px;
+        background: #374151;
+
+        .item{
+            width: 24px;
+            height: 2px;
+            border-radius: 1px;
+            background: #9CA3AF;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        & .item:nth-child(1){
+            transform: translateY(calc(-50% - 5px)) translateX(-50%);
+        }
+
+        & .item:nth-child(2){
+            transform: translateY(calc(-50% + 5px)) translateX(-50%);
+        }
+    }
+
+    .burger-menu:hover{
+        & .item{
+            background-color: white;
+        }
+
+        & .item:nth-child(1){
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        & .item:nth-child(2){
+            transform: translateX(-50%) rotate(135deg);
+        }
+
+        & .item:nth-child(3){
+            display: none;
+        }
+    }
+
+    .header-left{
+        display: flex;
+        gap: 2rem;
+    
+        h1{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            display: block;
+
+            ul{
+                display: flex;
+                gap: 10px;
+                font-size: 1rem;
+                font-weight: 500;
+                
+                li{
+                    padding: 0.5rem 1rem;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+
+                .active{
+                    background: #111827;
+                }
+
+                :hover{
+                    background: #374151;
+                }
+            }
+        }
+
+    }
+    
+}
+
+@media screen and (max-width: 428px){
+    // body{
+    //     width: fit-content;
+    // }
+    .container{
+        width: calc(100% - 32px);
+
+        .burger-menu{
+            display: block;
+        }
+
+        .header-left{
+            gap: 0;
+
+            li{
+                display: none;
+            }
+        }
+    }
+}
